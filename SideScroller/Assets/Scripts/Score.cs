@@ -21,7 +21,7 @@ public class Score : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "coin")
+        if (collision.gameObject.tag == "Coin")
         {
             playerScore += 10;
             Destroy(collision.gameObject);

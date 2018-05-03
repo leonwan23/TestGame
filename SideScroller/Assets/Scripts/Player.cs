@@ -58,9 +58,10 @@ public class Player : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.name == "ground")
+        if (collision.collider.tag == "Ground" || collision.collider.tag == "Platform")
         {
             isOnGround = true;
         }
     }
+
 }
