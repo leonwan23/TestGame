@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour {
     private float timeToFire = 0;
     private Transform firePoint;
 
+    public Transform bulletTrailPrefab;
+
 	// Use this for initialization
 	void Awake () {
         firePoint = transform.Find("FirePoint");
@@ -26,7 +28,6 @@ public class Gun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Shoot();
 		if (fireRate == 0)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -46,10 +47,14 @@ public class Gun : MonoBehaviour {
 
         //set firepoint as a vector2
         Vector2 firePointPosition = new Vector2(firePoint.position.x,firePoint.position.y);
+        Effect();
 
         //cast out the ray, first qrg = origin, second arg = direction, third arg(optional) = distance, fourth arg(optional) = layermask
-        RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 10, whatToHit);
+        RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition, 10, whatToHit);
+    }
 
-        Debug.DrawLine(firePointPosition, mousePosition);
+    void Effect() {
+        //spawn bullet trail
+        Instantiate(bulletTrailPrefab, firePoint.position, firePoint.rotation);
     }
 }
