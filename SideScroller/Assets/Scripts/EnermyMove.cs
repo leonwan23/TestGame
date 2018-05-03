@@ -7,6 +7,7 @@ public class EnermyMove : MonoBehaviour {
     public int enemySpeed;
     public int xMove = 1;
 
+    public float contactDistance;
 
 	// Update is called once per frame
 	void Update () {
@@ -14,7 +15,7 @@ public class EnermyMove : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove, 0));
         //enemies only move in x direction
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * enemySpeed;
-        if(hit.distance < 1.5)
+        if(hit.distance < contactDistance)
         {
             FlipEnemy();
         }
