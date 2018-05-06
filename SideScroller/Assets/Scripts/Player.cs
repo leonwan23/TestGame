@@ -10,15 +10,27 @@ public class Player : MonoBehaviour {
     public float moveX;
     public bool isOnGround = true;
 
-	// Use this for initialization
-	void Start () {
+
+    public GameObject bulletToRight;
+    Vector2 bulletPosition;
+    public float fireRate = 0.5f;
+    public float nextFire = 0.0f;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
         PlayerMove();
-	}
+
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Shoot();
+        }
+    }
 
     void PlayerMove()
     {
@@ -62,6 +74,27 @@ public class Player : MonoBehaviour {
         {
             isOnGround = true;
         }
+
+    }
+
+    void Shoot()
+    {
+        bulletPosition = transform.position;
+
+        if (facingRight)
+        {
+            bulletPosition += new Vector2(-3.5f, 0.5f);
+            GameObject g = Instantiate(bulletToRight, bulletPosition, Quaternion.identity) as GameObject;
+            BulletScript bulletLeft = g.GetComponent<BulletScript>();
+            bulletLeft.velX *= -1;
+            
+        } else
+        {
+            bulletPosition += new Vector2(+3.5f, 0.5f);
+            Instantiate(bulletToRight, bulletPosition, Quaternion.identity);
+
+        }
+       
     }
 
 }
