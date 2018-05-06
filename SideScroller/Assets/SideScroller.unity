@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMin: -0.1
   xMax: 0.1
-  yMin: 11
+  yMin: 9.5
   yMax: 20
 --- !u!1 &529477289
 GameObject:

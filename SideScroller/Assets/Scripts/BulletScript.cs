@@ -19,4 +19,12 @@ public class BulletScript : MonoBehaviour {
         rb.velocity = new Vector2(velX, velY);
 
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Platform") || collision.gameObject.tag.Equals("Coin"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
