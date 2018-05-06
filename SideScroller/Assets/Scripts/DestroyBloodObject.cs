@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour {
-
+public class DestroyBloodObject : MonoBehaviour {
 
 	// Use this for initialization
-	void Awake () {
-
+	void Start () {
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-    }
-
+        //destroy blood object after 2 seconds
+        Destroy(gameObject, 2f);
+	}
 }

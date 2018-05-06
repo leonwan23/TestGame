@@ -10,11 +10,13 @@ public class Player : MonoBehaviour {
     public float moveX;
     public bool isOnGround = true;
 
-
+    //for bullets
     public GameObject bulletToRight;
     Vector2 bulletPosition;
     public float fireRate = 0.5f;
     public float nextFire = 0.0f;
+
+    public GameObject blood;
 
     // Use this for initialization
     void Start () {

@@ -9,6 +9,8 @@ public class EnermyMove : MonoBehaviour {
 
     public float contactDistance;
 
+    public GameObject blood;
+
 	// Update is called once per frame
 	void Update () {
 
@@ -37,6 +39,7 @@ public class EnermyMove : MonoBehaviour {
     {
         if(collision.gameObject.tag.Equals("Bullet"))
         {
+            Instantiate(blood, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
