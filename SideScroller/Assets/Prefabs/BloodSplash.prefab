@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4519957344664400}
   - component: {fileID: 198128273716763294}
   - component: {fileID: 199181823468751624}
+  - component: {fileID: 114893586149621348}
   m_Layer: 0
   m_Name: BloodSplash
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -130, y: 0, z: 0}
+--- !u!114 &114893586149621348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858768310794588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2254fb2bb97588743b2ad5fc71773f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198128273716763294
 ParticleSystem:
   m_ObjectHideFlags: 1
