@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public int playerSpeed = 10;
-    public bool facingRight = true;
+    public static bool facingRight = true;
     public int playerJumpHeight = 1250;
     public float moveX;
     public bool isOnGround = true;
