@@ -65,6 +65,10 @@ public class Player : MonoBehaviour {
             isOnGround = true;
         }
 
+        if(collision.gameObject.tag.Equals("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
