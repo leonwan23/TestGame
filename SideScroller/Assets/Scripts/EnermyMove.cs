@@ -12,8 +12,19 @@ public class EnermyMove : MonoBehaviour {
     public GameObject blood;
     public bool faceRight;
 
-	// Update is called once per frame
-	void Update () {
+    //for chasing player
+    private Transform target; // player as target to chase after
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();  //find object tagged as player
+    }
+
+
+    // Update is called once per frame
+    void Update () {
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);  //move from, move to, speed
 
         faceRight = Player.facingRight;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove, 0));
@@ -29,6 +40,7 @@ public class EnermyMove : MonoBehaviour {
         else {
             Debug.Log("Left");
         }
+
 	}
 
     void FlipEnemy()
