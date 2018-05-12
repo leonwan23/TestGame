@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour {
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
+            SoundManagerScript.PlaySound("fireSound"); //play fire sound
             Shoot();
         }
     }
