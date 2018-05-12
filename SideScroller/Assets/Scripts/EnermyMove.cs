@@ -26,20 +26,20 @@ public class EnermyMove : MonoBehaviour {
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);  //move from, move to, speed
 
-        faceRight = Player.facingRight;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove, 0));
-        //enemies only move in x direction
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * enemySpeed;
-        if(hit.distance < contactDistance)
-        {
-            FlipEnemy();
-        }
-        if(faceRight) {
-            Debug.Log("Right");
-        }
-        else {
-            Debug.Log("Left");
-        }
+        //faceRight = Player.facingRight;
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove, 0));
+        ////enemies only move in x direction
+        //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * enemySpeed;
+        //if(hit.distance < contactDistance)
+        //{
+        //    FlipEnemy();
+        //}
+        //if(faceRight) {
+        //    Debug.Log("Right");
+        //}
+        //else {
+        //    Debug.Log("Left");
+        //}
 
 	}
 
