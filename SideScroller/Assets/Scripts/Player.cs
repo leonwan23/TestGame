@@ -22,9 +22,9 @@ public class Player : MonoBehaviour {
     void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         PlayerMove();
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
@@ -32,6 +32,15 @@ public class Player : MonoBehaviour {
             nextFire = Time.time + fireRate;
             Shoot();
         }
+
+        //if (EnermyMove.contactDistance < 0)
+        //{
+        //    if (PlayerHealth.health > 0)
+        //        PlayerHealth.health--;
+         
+        //}
+        Debug.Log("Player Update(): Player's Health: " + PlayerHealth.health);
+
     }
 
     void PlayerMove()
@@ -75,6 +84,19 @@ public class Player : MonoBehaviour {
         if (collision.collider.tag == "Ground" || collision.collider.tag == "Platform")
         {
             isOnGround = true;
+        }
+
+        if(collision.collider.tag == "Enemy")
+        {
+            Debug.Log("Touched Enemy 1");
+        }
+
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            Debug.Log("Touched Enemy 2");
+            //Instantiate(blood, transform.position, Quaternion.identity);
+            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
         }
 
     }

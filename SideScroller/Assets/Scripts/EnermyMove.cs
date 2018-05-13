@@ -7,7 +7,7 @@ public class EnermyMove : MonoBehaviour {
     public int enemySpeed;
     public int xMove = 1;
 
-    public float contactDistance;
+    public static float contactDistance;
 
     public GameObject blood;
     public static bool faceRight;
@@ -23,10 +23,10 @@ public class EnermyMove : MonoBehaviour {
             FlipEnemy();
         }
         if(faceRight) {
-            Debug.Log("Right");
+            //Debug.Log("Right");
         }
         else {
-            Debug.Log("Left");
+            //Debug.Log("Left");
         }
 	}
 
