@@ -59,6 +59,9 @@ public class EnermyMove : MonoBehaviour {
     {
         if(collision.gameObject.tag.Equals("Bullet"))
         {
+          
+            Score.setKillScore(10);
+
             Instantiate(blood, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);

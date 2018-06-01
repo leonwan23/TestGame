@@ -19,8 +19,10 @@ public class Gun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        //Input.GetButtonDown("Fire1") &&
+
         faceRight = Player.facingRight;
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (Input.GetButtonDown("Fire1") &&  Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             SoundManagerScript.PlaySound("fireSound"); //play fire sound
