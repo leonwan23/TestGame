@@ -9,7 +9,9 @@ public class Score : MonoBehaviour {
     public Text scoreDisplay;
     public string weaponType = "Pistol";
     public Text killScoreDisplay;
-    private static int killScore = 0; 
+    private static int killScore = 0;
+    public Text highScoreDisplay;
+    private int highScore;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,7 @@ public class Score : MonoBehaviour {
 	void Update () {
         scoreDisplay.text = "Weapon: " + weaponType;
         killScoreDisplay.text = "Kills: " + killScore;
+        highScoreDisplay.text = "High Score: " + highScore;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

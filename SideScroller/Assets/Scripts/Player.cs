@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
     {
         //Controls
         moveX = Input.GetAxis("Horizontal");
-        if(Input.GetButtonDown("Jump") && isOnGround == true)
+        if (Input.GetButtonDown("Jump") && isOnGround == true)
         {
             Jump();
         }
@@ -35,10 +35,12 @@ public class Player : MonoBehaviour {
         if(moveX < 0.0f && facingRight == false)
         {
             FlipPlayer();
+
         } else if (moveX > 0.0f && facingRight == true)
         {
-            FlipPlayer();
+            FlipPlayer(); 
         }
+        
         //Physics
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
     }

@@ -7,11 +7,15 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip fireSound;
     static AudioSource audioSource;
 
-	// Use this for initialization
-	void Start () {
-        fireSound = Resources.Load<AudioClip>("fireSound"); //load audio clip
+
+    private const string FIRE_SOUND = "fireSound";
+
+    // Use this for initialization
+    void Start () {
+        fireSound = Resources.Load<AudioClip>(FIRE_SOUND); //load audio clip
 
         audioSource = GetComponent<AudioSource>();
+
 	}
 	
 	// Update is called once per frame

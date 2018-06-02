@@ -42,7 +42,14 @@ public class PlatformGeneratorScript : MonoBehaviour {
         platformSelector = Random.Range(0, platformArray.Length);
 
         heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
-        Mathf.Clamp(heightChange, minHeight, maxHeight);
+
+        if (heightChange > maxHeight)
+        {
+            heightChange = maxHeight;
+        }else if (heightChange < minHeight)
+        {
+            heightChange = minHeight;
+        }
 
         transform.position = new Vector3(transform.position.x + platformWidthArray[platformSelector] + distanceBetween, heightChange, transform.position.z);
         
