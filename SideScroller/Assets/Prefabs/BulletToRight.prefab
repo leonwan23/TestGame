@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 5
+  blood: {fileID: 1858768310794588, guid: 3f447e6e44d03b64c88d3091f77e2824, type: 2}
 --- !u!212 &212003852731798796
 SpriteRenderer:
   m_ObjectHideFlags: 1

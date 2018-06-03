@@ -10,8 +10,14 @@ public class WeaponSpawnPointScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         weaponHere = weaponsArray[Random.Range(0, weaponsArray.Length)];
+       
         GetComponent<SpriteRenderer>().sprite = weaponHere.GetComponent<SpriteRenderer>().sprite;
-	}
+        if (weaponHere.name == "Shotgun")
+        {
+            Vector3 scale = new Vector3(2.5f, 3, 1f);   //scale sprite size of shotgun
+            transform.localScale = scale;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +28,7 @@ public class WeaponSpawnPointScript : MonoBehaviour {
     {
         if(collision.tag == "Player")
         {
-
+            collision.transform.Find("WeaponSlot").GetComponent<WeaponManager>().ChangeWeapon(weaponHere);
         }
     }
 }

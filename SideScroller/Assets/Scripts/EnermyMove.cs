@@ -9,7 +9,6 @@ public class EnermyMove : MonoBehaviour {
 
     public float contactDistance;
 
-    public GameObject blood;
     public bool faceRight;
 
     //for chasing player
@@ -55,16 +54,16 @@ public class EnermyMove : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag.Equals("Bullet"))
-        {
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.tag.Equals("Bullet"))
+    //    {
           
-            Score.setKillScore(10);
+    //        Score.setKillScore(10);
 
-            Instantiate(blood, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-    }
+    //        Instantiate(blood, transform.position, Quaternion.identity);
+    //        Destroy(collision.gameObject);
+    //        Destroy(gameObject);
+    //    }
+    //}
 }

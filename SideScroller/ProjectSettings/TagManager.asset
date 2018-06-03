@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - Wall
   - Bullet
+  - WeaponPickup
   layers:
   - Default
   - TransparentFX

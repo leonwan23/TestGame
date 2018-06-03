@@ -33,6 +33,10 @@ public class WeaponManager : MonoBehaviour {
             {
                 projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.left * weapon.projectileSpeed;   
             }
+            else if(weapon.projectileMode == WeaponScript.Modes.Shotgun)
+            {
+                
+            }
         }
 	}
 
@@ -42,4 +46,15 @@ public class WeaponManager : MonoBehaviour {
         canShoot = true;
     }
 
+    public void ChangeWeapon(GameObject newWeapon)
+    {
+        activeWeapon = newWeapon;
+        weapon = activeWeapon.GetComponent<WeaponScript>();
+        GetComponent<SpriteRenderer>().sprite = weapon.weaponSprite;
+        if(weapon.name == "Shotgun")
+        {
+            Vector3 scale = new Vector3(2.5f, 3, 1f);   //scale sprite size of shotgun
+            transform.localScale = scale;
+        }
+    }
 }
