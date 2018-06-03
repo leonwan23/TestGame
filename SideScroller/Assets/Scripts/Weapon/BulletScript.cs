@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
 
-    public float velX = 5;
-    public float velY = 0;
+    //public float velX = 5;
+    //public float velY = 0;
     Rigidbody2D rb;
+    public float destroyTime;
 
 	// Use this for initialization
 	void Start () {
@@ -16,13 +17,14 @@ public class BulletScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        rb.velocity = new Vector2(velX, velY);
+        //rb.velocity = new Vector2(velX, velY);
+        Destroy(gameObject, destroyTime);
 
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Platform") || collision.gameObject.tag.Equals("Coin"))
+        if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Platform") || collision.gameObject.tag.Equals("Enemy"))
         {
             Destroy(gameObject);
         }

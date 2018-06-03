@@ -12,8 +12,8 @@ public class SoundManagerScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        fireSound = Resources.Load<AudioClip>(FIRE_SOUND); //load audio clip
 
+        fireSound = Resources.Load<AudioClip>(FIRE_SOUND); //load audio clip
         audioSource = GetComponent<AudioSource>();
 
 	}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformGeneratorScript : MonoBehaviour {
 
     public Transform generationPoint;
+    public Transform destroyPoint;
 
     public GameObject[] platformArray;
     private int platformSelector;
@@ -36,24 +37,36 @@ public class PlatformGeneratorScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-        
-        distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
-        platformSelector = Random.Range(0, platformArray.Length);
+    void Update()
+    {
 
-        heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
+        if (transform.position.x < generationPoint.position.x)
+        {
 
-        if (heightChange > maxHeight)
-        {
-            heightChange = maxHeight;
-        }else if (heightChange < minHeight)
-        {
-            heightChange = minHeight;
+            distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
+            platformSelector = Random.Range(0, platformArray.Length);
+
+            heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
+
+            if (heightChange > maxHeight)
+            {
+                heightChange = maxHeight;
+            }
+            else if (heightChange < minHeight)
+            {
+                heightChange = minHeight;
+            }
+
+            transform.position = new Vector3(transform.position.x + platformWidthArray[platformSelector] + distanceBetween, heightChange, transform.position.z);
+
+
+            Instantiate(platformArray[platformSelector], transform.position, transform.rotation);
         }
 
-        transform.position = new Vector3(transform.position.x + platformWidthArray[platformSelector] + distanceBetween, heightChange, transform.position.z);
-        
-        Instantiate(platformArray[platformSelector], transform.position, transform.rotation);
+        if (transform.position.x < destroyPoint.transform.position.x)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 ;
