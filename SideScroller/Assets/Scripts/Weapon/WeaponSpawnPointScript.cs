@@ -29,6 +29,7 @@ public class WeaponSpawnPointScript : MonoBehaviour {
         if(collision.tag == "Player")
         {
             collision.transform.Find("WeaponSlot").GetComponent<WeaponManager>().ChangeWeapon(weaponHere);
+            Destroy(this.gameObject);
         }
     }
 }
