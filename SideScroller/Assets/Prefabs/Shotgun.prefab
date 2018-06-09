@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSprite: {fileID: 21300000, guid: cd4979d2936ef0f4c895c7d09e1a9586, type: 3}
-  projectile: {fileID: 1291425450978526, guid: c92916b456f87024487a00155c60607b, type: 2}
-  projectileSpeed: 50
+  projectile: {fileID: 1664052251802030, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+  projectileSpeed: 10
   cooldown: 1
   projectileMode: 1
 --- !u!212 &212501904391992220

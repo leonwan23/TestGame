@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour {
 
-    public enum Modes { melee, Straight, Follow, Throw, Shotgun};
+    public enum Modes { melee, Straight, Follow, Throw};
 
     public Sprite weaponSprite;
     public GameObject projectile;

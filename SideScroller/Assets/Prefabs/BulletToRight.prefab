@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192af97eb49ea4c4c8e7d239a5ae30e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velX: 50
+  velY: 0
   destroyTime: 5
   blood: {fileID: 1858768310794588, guid: 3f447e6e44d03b64c88d3091f77e2824, type: 2}
 --- !u!212 &212003852731798796

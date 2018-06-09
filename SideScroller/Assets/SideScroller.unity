@@ -965,7 +965,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c43d5f76d87d2ce47adfa3dff3a22880, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.555
+  m_Volume: 0.14
   m_Pitch: 1.5
   Loop: 1
   Mute: 0
@@ -1049,6 +1049,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &721590375
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423000384857002, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664052251802030, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+      propertyPath: m_Name
+      value: ShotgunBullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6a12fa4bc6f79d64fa6564982aa1790b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &758063797
 Prefab:
   m_ObjectHideFlags: 0
@@ -2229,6 +2275,8 @@ MonoBehaviour:
   weaponsArray:
   - {fileID: 1912045324250304, guid: 46f667eedba0b834497f3e719654cfb8, type: 2}
   weaponHere: {fileID: 0}
+  isTakeWeapon: 0
+  previousWeapon: {fileID: 0}
 --- !u!61 &1769872997
 BoxCollider2D:
   m_ObjectHideFlags: 0

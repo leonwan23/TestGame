@@ -6,10 +6,15 @@ public class WeaponSpawnPointScript : MonoBehaviour {
 
     public GameObject[] weaponsArray;
     public GameObject weaponHere;
+    public bool isTakeWeapon;
+    int weaponIndex;
+    public GameObject previousWeapon;
 
 	// Use this for initialization
 	void Start () {
-        weaponHere = weaponsArray[Random.Range(0, weaponsArray.Length)];
+
+        weaponIndex = Random.Range(0, weaponsArray.Length);
+        weaponHere = weaponsArray[weaponIndex];
        
         GetComponent<SpriteRenderer>().sprite = weaponHere.GetComponent<SpriteRenderer>().sprite;
         if (weaponHere.name == "Shotgun")
@@ -21,15 +26,29 @@ public class WeaponSpawnPointScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (isTakeWeapon)
+        {
+            weaponHere = weaponsArray[weaponIndex];
+            GetComponent<SpriteRenderer>().sprite = weaponHere.GetComponent<SpriteRenderer>().sprite;
+            isTakeWeapon = false;
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
+            GameObject oldWeapon = collision.transform.Find("WeaponSlot").GetComponent<WeaponManager>().DropWeapon();
+
             collision.transform.Find("WeaponSlot").GetComponent<WeaponManager>().ChangeWeapon(weaponHere);
             Destroy(this.gameObject);
+            //isTakeWeapon = true;
+            //GetComponent<SpriteRenderer>().sprite = null;
+
+            Instantiate(oldWeapon, transform.position, Quaternion.identity);
+            GetComponent<SpriteRenderer>().sprite = oldWeapon.GetComponent<SpriteRenderer>().sprite;
+            isTakeWeapon = true;
         }
     }
 }

@@ -117,8 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 15
   xMove: 1
+  enemyHp: 2
   contactDistance: 2.5
-  blood: {fileID: 1858768310794588, guid: 3f447e6e44d03b64c88d3091f77e2824, type: 2}
   faceRight: 0
 --- !u!212 &212916908285984990
 SpriteRenderer:

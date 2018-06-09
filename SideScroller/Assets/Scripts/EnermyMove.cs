@@ -6,6 +6,7 @@ public class EnermyMove : MonoBehaviour {
 
     public int enemySpeed;
     public int xMove = 1;
+    public int enemyHp;
 
     public float contactDistance;
 
@@ -65,5 +66,5 @@ public class EnermyMove : MonoBehaviour {
     //        Destroy(collision.gameObject);
     //        Destroy(gameObject);
     //    }
-    //}
+    //} 
 }

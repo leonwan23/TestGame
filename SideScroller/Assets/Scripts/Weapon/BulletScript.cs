@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
 
-    //public float velX = 5;
-    //public float velY = 0;
+    public float velX;
+    public float velY;
     Rigidbody2D rb;
     public float destroyTime;
     public GameObject blood;
@@ -13,12 +13,14 @@ public class BulletScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        rb.velocity = new Vector2(velX, velY);
+        //rb.velocity = Vector3.zero;
+        //rb.AddForce(new Vector3(velX,0,0), ForceMode2D.Impulse);
+    }
 
-        //rb.velocity = new Vector2(velX, velY);
+    // Update is called once per frame
+    void Update () {
+
         Destroy(gameObject, destroyTime);
 
 	}
@@ -35,10 +37,11 @@ public class BulletScript : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            Destroy(collision.gameObject);
             Destroy(this.gameObject);
-            Score.setKillScore(10);
-            Instantiate(blood, transform.position, Quaternion.identity);
+                Destroy(collision.gameObject);
+                Score.setKillScore(10);
+                Instantiate(blood, transform.position, Quaternion.identity);
+            
 
         } else if (collision.gameObject.tag != "WeaponPickup")
         {

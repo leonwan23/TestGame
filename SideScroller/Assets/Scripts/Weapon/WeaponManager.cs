@@ -26,16 +26,14 @@ public class WeaponManager : MonoBehaviour {
             StartCoroutine("CoolDown");
 
             //Vector3 rotation = transform.parent.localScale.x == 1 ? Vector3.zero : Vector3.forward * 180;
-            GameObject projectile = (GameObject)Instantiate(weapon.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * -transform.parent.localScale.x, Quaternion.identity);
-            //SoundManagerScript.PlaySound("fireSound"); //play fire sound
+            //transform.position + activeWeapon.transform.GetChild(0).localPosition * -transform.parent.localScale.x
+            GameObject projectile = (GameObject)Instantiate(weapon.projectile, transform.position + activeWeapon.transform.Find("FirePoint").localPosition * -transform.parent.localScale.x, Quaternion.identity);
+           
 
             if (weapon.projectileMode == WeaponScript.Modes.Straight)
             {
-                projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.left * weapon.projectileSpeed;   
-            }
-            else if(weapon.projectileMode == WeaponScript.Modes.Shotgun)
-            {
-                
+                //projectile.GetComponent<Rigidbody2D>().velocity = transform.parent.localScale.x * Vector2.left * weapon.projectileSpeed;   
+                //GameObject projectile = (GameObject)Instantiate(weapon.projectile, transform.position + activeWeapon.transform.GetChild(0).localPosition * -transform.parent.localScale.x, Quaternion.identity);
             }
         }
 	}
@@ -56,5 +54,11 @@ public class WeaponManager : MonoBehaviour {
             Vector3 scale = new Vector3(2.5f, 3, 1f);   //scale sprite size of shotgun
             transform.localScale = scale;
         }
+    }
+
+    public GameObject DropWeapon()
+    {
+        GameObject oldWeapon = activeWeapon;
+        return oldWeapon;
     }
 }
